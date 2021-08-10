@@ -13,10 +13,12 @@
   changed_when: False
   ignore_errors: yes
 
-- debug:
+- name: Oracle status
+  debug:
     msg: C:\Program Files\Oracle exists
   when: oracle.stdout != ""
 
-- debug:
+- name: MSSQL status
+  debug:
     msg: MSSQL exists
   when: mssql.exists

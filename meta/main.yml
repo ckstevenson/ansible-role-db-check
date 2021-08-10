@@ -2,7 +2,7 @@
 dependencies: []
 
 galaxy_info:
-  role_name: db-check
+  role_name: db_check
   author: ckstevenson
   description: Simple check for MSSQL and Oracle on Windows and Linux for auditing purposes.
   license: MIT
