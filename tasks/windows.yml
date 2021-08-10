@@ -1,0 +1,22 @@
+---
+# Check is MSSQL or Oracle exists on a Windows machine
+- name: Look for MSSQL registry key
+  win_reg_stat:
+    path: HKLM:\System\CurrentControlSet\Services\MSSQLServer
+  ignore_errors: yes
+  register: mssql
+
+  # Below task might throw false positive. Implement https://stackoverflow.com/questions/304960/detecting-if-an-oracle-database-is-installed for best checks
+- name: Look for Oracle on file system
+  win_shell: Get-Item 'C:\Program Files\Oracle'
+  register: oracle
+  changed_when: False
+  ignore_errors: yes
+
+- debug:
+    msg: C:\Program Files\Oracle exists
+  when: oracle.stdout != ""
+
+- debug:
+    msg: MSSQL exists
+  when: mssql.exists

@@ -1,0 +1,8 @@
+- name: Check if Oracle installed on the linux machine
+  stat:
+    path: /etc/oratab
+  register: st
+
+- debug:
+    msg: "Oracle installed"
+  when: st.stat.exists
