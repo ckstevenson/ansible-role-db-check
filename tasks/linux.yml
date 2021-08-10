@@ -1,11 +1,11 @@
 # Linux checks
 ---
 - name: Check if Oracle installed on the linux machine
-  stat:
+  ansible.builtin.stat:
     path: /etc/oratab
     register: st
 
 - name: Writing output
-  debug:
+  ansible.builtin.debug:
     msg: "Oracle installed"
   when: st.stat.exists
