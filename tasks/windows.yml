@@ -1,5 +1,5 @@
----
 # Check is MSSQL or Oracle exists on a Windows machine
+---
 - name: Look for MSSQL registry key
   win_reg_stat:
     path: HKLM:\System\CurrentControlSet\Services\MSSQLServer

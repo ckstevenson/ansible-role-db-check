@@ -1,3 +1,5 @@
+# Linux checks
+---
 - name: Check if Oracle installed on the linux machine
   stat:
     path: /etc/oratab
