@@ -11,8 +11,6 @@ Example Playbook
   hosts: all
   roles
     - ckstevenson.db-check
-
-License
--------
-
-MIT / BSD
+```
+## License
+MIT
